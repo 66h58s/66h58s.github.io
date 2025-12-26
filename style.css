@@ -1,0 +1,105 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background-color: #fafafa;
+    font-family: -apple-system, sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 935px;
+    padding: 40px 20px;
+}
+
+/* 頂部併排結構 */
+.profile-top {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    margin-bottom: 44px;
+    padding-left: 50px;
+}
+
+.photo img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #dbdbdb;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.name-row { display: flex; align-items: center; gap: 20px; }
+.name-row h1 { font-size: 28px; font-weight: 300; }
+.edit-btn { background: #efefef; border: none; border-radius: 8px; padding: 6px 16px; font-weight: 600; cursor: pointer; }
+
+.stats { display: flex; gap: 40px; }
+.stat-item { font-size: 16px; }
+
+.bio { font-size: 14px; font-weight: 600; }
+
+/* 精選動態置中 */
+.highlights {
+    display: flex;
+    justify-content: center;
+    gap: 45px;
+    margin-bottom: 44px;
+}
+
+.h-item { text-align: center; font-size: 12px; }
+
+.circle {
+    width: 77px;
+    height: 77px;
+    border-radius: 50%;
+    border: 1px solid #dbdbdb; /* 灰邊 */
+    padding: 3px; /* 留白 */
+    background: white;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* 作品格線 */
+.works {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    border-top: 1px solid #dbdbdb;
+    padding-top: 50px;
+}
+
+.work-item { position: relative; aspect-ratio: 1/1; background: #eee; overflow: hidden; }
+.work-item img { width: 100%; height: 100%; object-fit: cover; }
+
+.overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.3);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    opacity: 0;
+    transition: 0.2s;
+    font-size: 18px;
+}
+
+.work-item:hover .overlay { opacity: 1; }
+
+.top { margin: 50px 0; text-align: center; }
+.top a { text-decoration: none; color: black; border: 1px solid #dbdbdb; padding: 5px 15px; }
